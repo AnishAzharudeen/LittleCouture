@@ -13,14 +13,18 @@ def category_list(request):
 
 def article_list(request, category_id):
     articles = Article.objects.filter(category_id=category_id)
-    return render(request, 'fashion/article_list.html', {'articles': articles})
+    return render(request, 'fashion/fashion.html', {'articles': articles})
 
-class PostListView(ListView):
+def PostListView(ListView):
     model = Article
     template_name = 'fashion/post_list.html'
-    context_object_name = 'posts'
+    context_object_name = 'post_list'
     ordering = ['-created_on']
 
 def lifestyle(request):
     post_list = Article.objects.filter(category__name='LifeStyle')
     return render(request, 'fashion/lifestyle.html', {'post_list': post_list})
+
+def fashion(request):
+    post_list = Article.objects.filter(category__name='Fashion')
+    return render(request, 'fashion/fashion.html', {'post_list': post_list})

@@ -5,6 +5,13 @@ from django.db import migrations, models
 import django.db.models.deletion
 import django.utils.timezone
 
+def get_default_author(apps, schema_editor):
+    User = apps.get_model(settings.AUTH_USER_MODEL)
+    default_author = User.objects.first()
+    Article = apps.get_model('fashion', 'Article')
+    for article in Article.objects.all():
+        article.author = default_author
+        article.save()
 
 class Migration(migrations.Migration):
 
@@ -25,8 +32,7 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name='article',
             name='author',
-            field=models.ForeignKey(default=django.utils.timezone.now, on_delete=django.db.models.deletion.CASCADE, related_name='blog_posts', to=settings.AUTH_USER_MODEL),
-            preserve_default=False,
+            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='blog_posts', to=settings.AUTH_USER_MODEL),
         ),
         migrations.AddField(
             model_name='article',
@@ -59,6 +65,11 @@ class Migration(migrations.Migration):
             name='title',
             field=models.CharField(max_length=200, unique=True),
         ),
+        migrations.AlterField(
+            model_name='article',
+            name='content',
+            field=models.TextField(),
+        ),
         migrations.CreateModel(
             name='Comment',
             fields=[
@@ -73,4 +84,5 @@ class Migration(migrations.Migration):
                 'ordering': ['created_on'],
             },
         ),
+        migrations.RunPython(get_default_author),
     ]

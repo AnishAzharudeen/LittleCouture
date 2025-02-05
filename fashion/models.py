@@ -19,10 +19,10 @@ class Article(models.Model):
     slug = models.SlugField(max_length=200, unique=True)
     author = models.ForeignKey(User, on_delete=models.CASCADE, related_name="blog_posts")
     content = models.TextField()
-    created_on = models.DateTimeField()
+    created_on = models.DateTimeField(default=timezone.now)
     status = models.IntegerField(choices=STATUS, default=0)
     excerpt = models.TextField(blank=True)
-    updated_on = models.DateTimeField()
+    updated_on = models.DateTimeField(default=timezone.now)
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
 
     class Meta:
@@ -37,7 +37,7 @@ class Comment(models.Model):
     author = models.ForeignKey(User, on_delete=models.CASCADE, related_name="commenter")
     body = models.TextField()
     approved = models.BooleanField(default=False)
-    created_on = models.DateTimeField()
+    created_on = models.DateTimeField(default=timezone.now)
 
     class Meta:
         ordering = ["created_on"]
