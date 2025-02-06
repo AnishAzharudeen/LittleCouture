@@ -9,4 +9,5 @@ urlpatterns = [
     path('posts/', views.PostListView, name='post_list'),
     path('lifestyle/', views.lifestyle, name='lifestyle'),
     path('fashion/', views.fashion, name='fashion'),
+    path('post/<slug:slug>/', views.post_detail, name='post_detail'),
 ]

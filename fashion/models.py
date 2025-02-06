@@ -8,6 +8,7 @@ STATUS = ((0, "Draft"), (1, "Published"))
 # Category Model
 class Category(models.Model):
     name = models.CharField(max_length=100)
+    slug = models.SlugField(max_length=200, unique=True)
     description = models.TextField()
 
     def __str__(self):
@@ -33,7 +34,7 @@ class Article(models.Model):
 
 # Comment Model
 class Comment(models.Model):
-    post = models.ForeignKey(Article, on_delete=models.CASCADE, related_name="comments")
+    article = models.ForeignKey(Article, on_delete=models.CASCADE, related_name="comments")
     author = models.ForeignKey(User, on_delete=models.CASCADE, related_name="commenter")
     body = models.TextField()
     approved = models.BooleanField(default=False)

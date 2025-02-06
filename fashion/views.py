@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from django.http import HttpResponse
 from django.views.generic import ListView
 from .models import Category, Article
@@ -28,3 +28,7 @@ def lifestyle(request):
 def fashion(request):
     post_list = Article.objects.filter(category__name='Fashion')
     return render(request, 'fashion/fashion.html', {'post_list': post_list})
+
+def post_detail(request, slug):
+    post = get_object_or_404(Article, slug=slug)
+    return render(request, 'fashion/post_detail.html', {'post': post})
