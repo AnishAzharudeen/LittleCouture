@@ -31,6 +31,9 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['127.0.0.1', '.herokuapp.com']
 
+CSRF_TRUSTED_ORIGINS = ['https://*.codeinstitute-ide.net', 
+                        'https://*.herokuapp.com']
+
 
 # Application definition
 
@@ -63,6 +66,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
 
 ROOT_URLCONF = 'my_project.urls'
