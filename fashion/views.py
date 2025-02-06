@@ -1,7 +1,7 @@
 from django.shortcuts import render, get_object_or_404
 from django.http import HttpResponse
 from django.views.generic import ListView
-from .models import Category, Article
+from .models import Category, Article, Event
 
 # Create your views here.
 def index(request):
@@ -32,3 +32,11 @@ def fashion(request):
 def post_detail(request, slug):
     post = get_object_or_404(Article, slug=slug)
     return render(request, 'fashion/post_detail.html', {'post': post})
+
+def event_list(request):
+    event_list = Event.objects.all().order_by('-date')
+    return render(request, 'fashion/event.html', {'event_list': event_list})
+
+def event_detail(request, slug):
+    event = get_object_or_404(Event, slug=slug)
+    return render(request, 'fashion/event_detail.html', {'event': event})

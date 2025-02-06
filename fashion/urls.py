@@ -10,4 +10,6 @@ urlpatterns = [
     path('lifestyle/', views.lifestyle, name='lifestyle'),
     path('fashion/', views.fashion, name='fashion'),
     path('post/<slug:slug>/', views.post_detail, name='post_detail'),
+    path('event/', views.event_list, name='event_list'),  
+    path('event/<slug:slug>/', views.event_detail, name='event_detail'),
 ]

@@ -45,3 +45,14 @@ class Comment(models.Model):
 
     def __str__(self):
         return f"Comment {self.body} by {self.author}"
+
+# Event Model
+class Event(models.Model):
+    title = models.CharField(max_length=200)
+    slug = models.SlugField(max_length=200, unique=True)
+    description = models.TextField()
+    date = models.DateTimeField(default=timezone.now)
+    image = models.ImageField(upload_to='events/', blank=True, null=True)
+
+    def __str__(self):
+        return self.title
