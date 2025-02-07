@@ -49,15 +49,15 @@ INSTALLED_APPS = [
     'allauth.account',
     'allauth.socialaccount',
     'django_summernote',
-     'fashion',
-     'crispy_forms',
+    'fashion',
+    'crispy_forms',
      'crispy_bootstrap5', 
      'about',
 ]
 
 SITE_ID = 1
-LOGIN_REDIRECT_URL = '/'
-LOGOUT_REDIRECT_URL = '/'
+LOGIN_REDIRECT_URL = '/fashion/categories/'
+LOGOUT_REDIRECT_URL = '/fashion/categories/'
 
 CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
 CRISPY_TEMPLATE_PACK = "bootstrap5"

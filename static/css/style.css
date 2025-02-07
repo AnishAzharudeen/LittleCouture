@@ -3,10 +3,14 @@
 /* General Styles */
 body {
     font-family: 'Lato', sans-serif;
-    background-color: #f8f9fa;
-    color: #333;
+    background-color: #0e7477;
+    color: #db2a2a;
     margin: 0;
     padding: 0;
+    background-image: url("{% static 'images/background.jpg' %}");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -95,4 +99,9 @@ a:hover {
 
 .footer a:hover {
     color: #007bff;
+}
+
+.logo {
+    height: 40px;
+    margin-right: 10px;
 }
