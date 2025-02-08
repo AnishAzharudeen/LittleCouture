@@ -28,8 +28,13 @@
                                     <p class="author">Author: {{ post.author }}</p>
                                 </div>
                             </div>
-                            
+                            <a href="{% url 'post_detail' post.slug %}" class="post-link">
+                                <h2 class="card-title">{{ post.title }}</h2>
+                            </a>
+                            <p class="card-text">{{ post.content|truncatewords:30 }}</p>
+                            <hr />
                             <p class="card-text text-muted h6">{{ post.created_on }}</p>
+                            <a href="{% url 'post_detail' post.slug %}" class="btn btn-primary">Continue to Read</a>
                         </div>
                     </div>
                 </div>
