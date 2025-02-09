@@ -34,8 +34,8 @@
         
         <nav class="navbar navbar-expand-lg navbar-light bg-white">
             <div class="container-fluid justify-content-center">
-                <a class="navbar-brand" href="{% url 'home' %}">
-                    <img src="{% static 'images/logo.png' %}" alt="Little Couture Logo" class="logo">
+                <a class="navbar-brand" href="{% url 'fashion' %}">
+                    <img src="{% static 'images/logo.jpg' %}" alt="Little Couture Logo" class="logo">
                     <span class="brand">L<span class="red-o">itt</span>le<span class="thin">|Courture</span></span>
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
@@ -84,15 +84,14 @@
                         </li>
                         {% endif %}
                         </ul>
-                    <a class="navbar-brand mx-auto logo-container" href="{% url 'home' %}">
+
+                    <span class="navbar-text text-muted text-center fw-bold mx-auto">
+                              Welcome to Our Kids Fashion Blog {{ user.username }}! 
+                              - Find tips to keep your kids looking fantastic.
+                    </span>
+                    <a class="navbar-brand mx-auto logo-container" href="{% url 'fashion' %}">
                         <img src="{% static 'images\logo.jpg' %}" alt="Logo" class="logo">
                     </a>
-                    <span class="navbar-text text-muted text-center fw-bold mx-auto">
-                          Welcome to Our Kids Fashion Blog {{ user.username }}! 
-                        - Explore the latest trends and outfits.
-                        - Find tips to keep your kids looking fantastic.
-                        
-                    </span>
                 </div>
             </div>
         </nav>
