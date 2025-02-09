@@ -1,9 +1,7 @@
 <!-- filepath: /c:/Users/mhdaz/LittleCouture/LittleCouture/fashion/templates/fashion/fashion.html -->
 {% extends 'base.html' %}
 {% load static %}
-
 {% block title %}Fashion{% endblock %}
-
 {% block content %}
 <h1>Fashion Articles</h1>
 <div class="container-fluid">
@@ -17,7 +15,6 @@
                         <div class="card-body">
                             <div class="image-container">
                                 {% if "placeholder" in post.featured_image.url %}
-                                    
                                     {% else %}
                                     <img class="card-img-top" src="{% static 'images/defaultblog.jpg' %}"
                                         alt="placeholder image">
@@ -32,9 +29,8 @@
                                 <h2 class="card-title">{{ post.title }}</h2>
                             </a>
                             <p class="card-text">{{ post.content|truncatewords:30 }}</p>
-                            <hr />
+                            <hr />    
                             <p class="card-text text-muted h6">{{ post.created_on }}</p>
-                            <a href="{% url 'post_detail' post.slug %}" class="btn btn-primary">Continue to Read</a>
                         </div>
                     </div>
                 </div>
