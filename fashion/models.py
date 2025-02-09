@@ -27,12 +27,16 @@ class Article(models.Model):
     excerpt = models.TextField(blank=True)
     updated_on = models.DateTimeField(default=timezone.now)
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
+    likes = models.ManyToManyField(User, related_name='article_likes', blank=True)
 
     class Meta:
         ordering = ["-created_on"]
 
     def __str__(self):
         return f"{self.title} | written by {self.author}"
+
+    def total_likes(self):
+        return self.likes.count()
 
 # Comment Model
 class Comment(models.Model):
@@ -41,6 +45,7 @@ class Comment(models.Model):
     body = models.TextField()
     approved = models.BooleanField(default=False)
     created_on = models.DateTimeField(default=timezone.now)
+
     class Meta:
         ordering = ["created_on"]
 

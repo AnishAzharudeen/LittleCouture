@@ -5,7 +5,8 @@ from django.contrib import messages
 from django.http import HttpResponseRedirect
 from django.contrib.auth.models import User
 from django.db.models import Count
-from .models import Category, Article, Event,Comment
+from django.urls import reverse
+from .models import Category, Article, Event, Comment
 from .forms import CommentForm
 
 
@@ -23,7 +24,7 @@ def article_list(request, category_id):
     articles = Article.objects.filter(category_id=category_id)
     return render(request, 'fashion/fashion.html', {'articles': articles})
 
-def PostListView(ListView):
+class PostListView(ListView):
     model = Article
     template_name = 'fashion/post_list.html'
     context_object_name = 'post_list'
@@ -47,21 +48,21 @@ def post_detail(request, slug):
         if comment_form.is_valid():
             comment = comment_form.save(commit=False)
             comment.author = request.user
-            comment.article= post
+            comment.article = post
             comment.save()
-           
             messages.add_message(
-               request, messages.SUCCESS,
-              'Comment submitted and awaiting approval'
-    )
-
-        
-    comment_form = CommentForm()
-    return render(request, 'fashion/post_detail.html', {'post': post,
-        "comments": comments,
-        "comment_count": comment_count,
-        "comment_form": comment_form,
-        })
+                request, messages.SUCCESS,
+                'Comment submitted and awaiting approval'
+            )
+            return redirect('post_detail', slug=post.slug)
+    else:
+        comment_form = CommentForm()
+    return render(request, 'fashion/post_detail.html', {
+        'post': post,
+        'comments': comments,
+        'comment_count': comment_count,
+        'comment_form': comment_form
+    })
 
 def comment_edit(request, slug, comment_id):
     """
@@ -109,3 +110,11 @@ def event_list(request):
 def event_detail(request, slug):
     event = get_object_or_404(Event, slug=slug)
     return render(request, 'fashion/event_detail.html', {'event': event})
+
+def like_article(request, slug):
+    article = get_object_or_404(Article, slug=slug)
+    if article.likes.filter(id=request.user.id).exists():
+        article.likes.remove(request.user)
+    else:
+        article.likes.add(request.user)
+    return HttpResponseRedirect(reverse('post_detail', args=[slug]))

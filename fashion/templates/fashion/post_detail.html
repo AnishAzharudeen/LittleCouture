@@ -78,6 +78,22 @@
             {% endfor %}
           </div>
         </div>
+         <!-- Like button -->
+    <div class="like-section">
+        <form action="{% url 'like_article' post.slug %}" method="POST">
+            {% csrf_token %}
+            {% if user.is_authenticated %}
+                {% if user in post.likes.all %}
+                    <button type="submit" class="btn btn-danger">Unlike</button>
+                {% else %}
+                    <button type="submit" class="btn btn-primary">Like</button>
+                {% endif %}
+            {% else %}
+                <p><a href="{% url 'account_login' %}">Log in</a> to like this post.</p>
+            {% endif %}
+        </form>
+        <p>{{ post.total_likes }} likes</p>
+    </div>
         <!-- Creating New Comments -->
         <div class="col-md-4 card mb-4 mt-3">
           <div class="card-body">
