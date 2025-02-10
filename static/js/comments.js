@@ -1,4 +1,4 @@
-
+console.log("comments.js loaded");
 const editButtons = document.getElementsByClassName("btn-edit");
 const commentText = document.getElementById("id_body");
 const commentForm = document.getElementById("commentForm");
@@ -13,6 +13,7 @@ for (let button of editButtons) {
   button.addEventListener("click", (e) => {
     let commentId = e.target.getAttribute("comment_id");
     let commentContent = document.getElementById(`comment${commentId}`).innerText;
+    console.log('Edit button clicked for comment ID:', commentId);
     commentText.value = commentContent;
     submitButton.innerText = "Update";
     commentForm.setAttribute("action", `edit_comment/${commentId}`);
@@ -28,3 +29,4 @@ for (let button of deleteButtons) {
       deleteModal.show();
     });
   }
+
