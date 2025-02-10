@@ -16,6 +16,8 @@ urlpatterns = [
     path('post/<slug:slug>/delete/', views.delete_article, name='delete_article'),
     path('<slug:slug>/edit_comment/<int:comment_id>',
          views.comment_edit, name='comment_edit'),
+             path('<slug:slug>/delete_comment/<int:comment_id>',
+         views.comment_delete, name='comment_delete'),
     path('event/', views.event_list, name='event_list'),  
     path('event/<slug:slug>/', views.event_detail, name='event_detail'),
 ]

@@ -13,7 +13,7 @@
                 <div class="hero-image hero-image-1">
                     <div class="hero-text text-center">
                         <h1>Share your Fashion Articles and LEts help you to Promote your brand</h1>
-                        <a href = "{% url 'about' %}" class="btn btn-primary btn-lg">Let's Collaborate</a>
+                        <a href = "{% url 'about' %}" class="btn btn-primary btn-lg">Work With US</a>
                     </div>
                 </div>
             </div>
@@ -104,13 +104,5 @@
     </nav>
     {% endif %}
 </div>
-
-<!-- Example form template -->
-<form method="post">
-    {% csrf_token %}
-    {{ form|crispy }}
-    <button type="submit" class="btn btn-primary">Submit</button>
-</form>
-
 <!-- index.html content ends here -->
 {% endblock %}

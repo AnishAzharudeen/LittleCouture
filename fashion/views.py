@@ -64,12 +64,13 @@ def post_detail(request, slug):
             return redirect('post_detail', slug=post.slug)
     else:
         comment_form = CommentForm()
+
     return render(request, 'fashion/post_detail.html', {
         'post': post,
         'comments': comments,
         'comment_count': comment_count,
         'comment_form': comment_form
-    })
+    },)
 
 def comment_edit(request, slug, comment_id):
     """
@@ -78,7 +79,7 @@ def comment_edit(request, slug, comment_id):
     if request.method == "POST":
 
         queryset = Article.objects.filter(status=1)
-        recipe = get_object_or_404(queryset, slug=slug)
+        post = get_object_or_404(queryset, slug=slug)
         comment = get_object_or_404(Comment, pk=comment_id)
         comment_form = CommentForm(data=request.POST, instance=comment)
 
@@ -99,7 +100,7 @@ def comment_delete(request, slug, comment_id):
     view to delete comment
     """
     queryset = Article.objects.filter(status=1)
-    recipe = get_object_or_404(queryset, slug=slug)
+    post = get_object_or_404(queryset, slug=slug)
     comment = get_object_or_404(Comment, pk=comment_id)
 
     if comment.author == request.user:
