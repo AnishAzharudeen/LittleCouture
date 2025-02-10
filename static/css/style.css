@@ -52,10 +52,18 @@ a:hover {
 
 /* Card Styles */
 .card {
-    border: none;
-    border-radius: 0;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    margin-bottom: 2rem;
+
+    border-radius: 8px;
+    box-shadow: var(--smal-box-shadow);
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+
+.card-img-top {
+    width: 100%;
+    border-bottom: 4px solid #2C0703;
+    object-fit: cover;
+    aspect-ratio: 1/1;
 }
 
 .card-body {
@@ -105,3 +113,6 @@ a:hover {
     height: 80px;
     margin-right: 80px;
 }
+
+
+

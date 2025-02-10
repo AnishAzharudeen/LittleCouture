@@ -7,7 +7,7 @@ from django.contrib.auth.models import User
 from django.db.models import Count
 from django.urls import reverse
 from .models import Category, Article, Event, Comment
-from .forms import CommentForm
+from .forms import CommentForm,ArticleForm
 
 
 
@@ -29,6 +29,13 @@ class PostListView(ListView):
     template_name = 'fashion/post_list.html'
     context_object_name = 'post_list'
     ordering = ['-created_on']
+
+class PostListView1(ListView):
+    model = Article
+    template_name = 'fashion/index.html'
+    context_object_name = 'post_list'
+    ordering = ['-created_on']
+
 
 def lifestyle(request):
     post_list = Article.objects.filter(category__name='LifeStyle')
@@ -118,3 +125,31 @@ def like_article(request, slug):
     else:
         article.likes.add(request.user)
     return HttpResponseRedirect(reverse('post_detail', args=[slug]))
+
+
+
+def edit_article(request, slug):
+    article = get_object_or_404(Article, slug=slug)
+    if request.user != article.author:
+        messages.error(request, "You are not authorized to edit this article.")
+        return redirect('post_detail', slug=slug)
+    if request.method == "POST":
+        form = ArticleForm(request.POST, request.FILES, instance=article)
+        if form.is_valid():
+            form.save()
+            messages.success(request, "Article updated successfully.")
+            return redirect('post_detail', slug=article.slug)
+    else:
+        form = ArticleForm(instance=article)
+    return render(request, 'fashion/edit_article.html', {'form': form, 'article': article})
+
+def delete_article(request, slug):
+    article = get_object_or_404(Article, slug=slug)
+    if request.user != article.author:
+        messages.error(request, "You are not authorized to delete this article.")
+        return redirect('post_detail', slug=slug)
+    if request.method == "POST":
+        article.delete()
+        messages.success(request, "Article deleted successfully.")
+        return redirect('home')
+    return render(request, 'fashion/delete_article.html', {'article': article})

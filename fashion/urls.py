@@ -4,7 +4,7 @@ from .views import PostListView,like_article
 
 urlpatterns = [
 
-    path('', views.PostListView.as_view(), name='home'),
+    path('', views.PostListView1.as_view(), name='home'),
     path('categories/', views.category_list, name='category_list'),
     path('categories/<int:category_id>/articles/', views.article_list, name='article_list'),
     path('posts/', views.PostListView.as_view(), name='post_list'),
@@ -12,6 +12,8 @@ urlpatterns = [
     path('fashion/', views.fashion, name='fashion'),
     path('post/<slug:slug>/', views.post_detail, name='post_detail'),
     path('post/<slug:slug>/like/', views.like_article, name='like_article'),
+    path('post/<slug:slug>/edit/', views.edit_article, name='edit_article'),
+    path('post/<slug:slug>/delete/', views.delete_article, name='delete_article'),
     path('<slug:slug>/edit_comment/<int:comment_id>',
          views.comment_edit, name='comment_edit'),
     path('event/', views.event_list, name='event_list'),  

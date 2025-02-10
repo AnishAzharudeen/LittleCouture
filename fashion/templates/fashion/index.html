@@ -3,6 +3,48 @@
 {% load crispy_forms_tags %}
 {% block content %}
 
+
+<!-- Hero Image section-->
+
+<main class="container-fluid p-0">
+    <div id="heroCarousel" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <div class="hero-image hero-image-1">
+                    <div class="hero-text text-center">
+                        <h1>Share your Fashion Articles and LEts help you to Promote your brand</h1>
+                        <a href = "{% url 'about' %}" class="btn btn-primary btn-lg">Let's Collaborate</a>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class="hero-image hero-image-2">
+                    <div class="hero-text text-center">
+                        <h1>Join us to Explore</h1>
+                        <a href="{% url 'account_login' %}" class="btn btn-primary btn-lg">Log-in</Log-in></a>
+                        
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class="hero-image hero-image-3">
+                    <div class="hero-text text-center text-white">
+                        <h1>Explore the Kids Fashion Event happening Soon!</h1>
+                        <a href="{% url 'event_list' %}" class="btn btn-primary btn-lg">Events</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+
 <!-- index.html content starts here -->
 <div class="container-fluid">
     <div class="row">
@@ -16,7 +58,7 @@
                         <div class="card-body">
                             <div class="image-container">
                                 {% if "placeholder" in post.featured_image.url %}
-                                    <img class="card-img-top" src="{% static 'images/default.jpg' %}"
+                                    <img class="card-img-top" src="{% static 'images/defaultblog.jpg' %}"
                                         alt="placeholder image">
                                     {% else %}
                                     <img class="card-img-top" src=" {{ post.featured_image.url }}"
