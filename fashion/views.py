@@ -154,3 +154,16 @@ def delete_article(request, slug):
         messages.success(request, "Article deleted successfully.")
         return redirect('home')
     return render(request, 'fashion/delete_article.html', {'article': article})
+
+def create_article(request):
+    if request.method == 'POST':
+        form = ArticleForm(request.POST, request.FILES)
+        if form.is_valid():
+            article = form.save(commit=False)
+            article.author = request.user
+            article.status = 0
+            article.save()
+            return redirect('post_list')
+    else:
+        form = ArticleForm()
+    return render(request, 'fashion/create_article.html', {'form': form})
