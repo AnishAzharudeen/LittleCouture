@@ -171,3 +171,95 @@ a:hover {
 }
 
 
+/* Forms Design*/
+
+
+.register-form {
+    width: 100%;
+    max-width: 800px; /* Set a maximum width for the form container */
+    margin: 3% auto;
+    padding: 20px;
+    box-shadow: var(--smal-box-shadow);
+    border-radius: 8px;
+    border: 1px solid #ccc; /* Add a border around the form container */
+    background-color: #F5F2F2; /* Set a background color for the form container */
+}
+
+
+/*** button styles ***/
+
+/* Edit button */
+.btn-edit {
+    background-color: #19768d;
+    font-weight: bold;
+    border: none;
+    padding: 10px 20px;
+    margin: 10px 0;
+    cursor: pointer;
+    border-radius: 8px;
+}
+
+/* Delete button */
+.btn-delete {
+    background-color: #e04199;
+    color: #000;
+    font-weight: bold;
+    border: none;
+    padding: 10px 20px;
+    margin: 10px 0;
+    cursor: pointer;
+    border-radius: 8px;
+}
+
+
+.btn-signup {
+    background-color: #19768d;
+    color: #000;
+    font-weight: bold;
+    border: none;
+    padding: 10px 20px;
+    margin: 10px 0;
+    cursor: pointer;
+    border-radius: 8px;
+}
+
+/* Signout button */
+.btn-signout {
+    background-color: #F9B114;
+    color: #000;
+    font-weight: bold;
+    border: none;
+    padding: 10px 20px;
+    margin: 10px 0;
+    cursor: pointer;
+    border-radius: 8px;
+}
+
+
+.btn-primary {
+    background-color: #19768d;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #dde1e6;
+}
+
+.btn-danger{
+    background-color: #e04199;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.btn-danger:hover {
+    background-color: #dde1e6;
+}

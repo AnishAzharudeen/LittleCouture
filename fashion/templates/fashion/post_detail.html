@@ -41,7 +41,7 @@
     <div class="row">
         <div class="col-12">
           <strong class="text-secondary">
-            <i class="far fa-comments"></i> {{ comment_count }} {{post.total_likes  }}
+            <i class="far fa-comments"></i> {{ comment_count }} <ion-icon name="heart"></ion-icon>{{post.total_likes  }}
           </strong>
           </div>
           <!-- Like button -->
@@ -50,9 +50,9 @@
           {% csrf_token %}
           {% if user.is_authenticated %}
               {% if user in post.likes.all %}
-                  <button type="submit" class="btn btn-danger">Unlike</button>
+                  <button type="submit" class="btn btn-danger"><ion-icon name="heart-dislike-sharp"></ion-icon>Unlike</button>
               {% else %}
-                  <button type="submit" class="btn btn-primary">Like</button>
+                  <button type="submit" class="btn btn-primary"><ion-icon name="heart"></ion-icon>Like</button>
               {% endif %}
           {% else %}
               <p><a href="{% url 'account_login' %}">Log in</a> to like this post.</p>
@@ -90,8 +90,8 @@
               </p>
               {% endif %}
               {% if user.is_authenticated and comment.author == user %}
-              <button class="btn btn-delete" comment_id="{{ comment.id }}">Delete</button>
-              <button class="btn btn-edit" comment_id="{{ comment.id }}">Edit</button>
+              <button class="btn btn-delete btn-lg" comment_id="{{ comment.id }}">Delete</button>
+              <button class="btn btn-edit btn-lg" comment_id="{{ comment.id }}">Edit</button>
               {% endif %}
             </div>
             <!-- Our for loop ends here -->
