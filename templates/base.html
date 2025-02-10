@@ -40,11 +40,11 @@
 
     <header>
         
-        <nav class="navbar navbar-expand-lg navbar-light bg-white">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <div class="container-fluid justify-content-center">
                 <a class="navbar-brand" href="{% url 'fashion' %}">
-                    <img src="{% static 'images/logo.jpg' %}" alt="Little Couture Logo" class="logo">
-                    <span class="brand">L<span class="red-o">itt</span>le<span class="thin">|Courture</span></span>
+                    <img src="{% static 'images/logo.png' %}" alt="Little Couture Logo" class="logo">
+                    <span class="brand">L<span class="red-o">itt</span>le<span class="thin">|Couture</span></span>
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
                     aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
@@ -94,8 +94,7 @@
                         </ul>
 
                     <span class="navbar-text text-muted text-center fw-bold mx-auto">
-                              Welcome to Our Kids Fashion Blog {{ user.username }}! 
-                              - Find tips to keep your kids looking fantastic.
+                                         
                     </span>
                     <a class="navbar-brand mx-auto logo-container" href="{% url 'fashion' %}">
                         <img src="{% static 'images\logo.jpg' %}" alt="Logo" class="logo">
@@ -121,14 +120,25 @@
 
 
     <main class="flex-shrink-0 main-bg">
-        <div class="alert alert-info text-center mb-0 fs-5" role="alert">
-            {% if user.is_authenticated %}
-                    Welcome, {{ user.username }}! 
-                     <a href="{{ logout_url }}" class="alert-link fs-5">Sign Out</a> 
-                {% else %} 
-            Join us 
-            <a href="{% url 'account_login' %}" class="alert-link fs-5">Sign In</a> to explore kids fashion trends.
-            {% endif %}
+        <div class="alert alert-info mb-0 fs-5" role="alert">
+            <div class="container">
+                <div class="row">
+                    <div class="col text-start">
+                        {% if user.is_authenticated %}
+                        Welcome to Our Kids Fashion Blog   {{ user.username }}! - Find tips to keep your kids looking fantastic.
+                        {% else %}
+                            Join us
+                        {% endif %}
+                    </div>
+                    <div class="col text-end">
+                        {% if user.is_authenticated %}
+                            <a href="{{ logout_url }}" class="alert-link fs-5">Sign Out</a>
+                        {% else %}
+                            <a href="{% url 'account_login' %}" class="alert-link fs-5">Sign In</a> to explore kids fashion trends.
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
         </div>
         {% block content %}
         {% endblock content %}
