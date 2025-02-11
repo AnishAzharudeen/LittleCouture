@@ -68,7 +68,8 @@ The initial wireframes and mockups for the project were created using Balsamiq. 
 
 
 ## User Flow Diagram
-The user flow diagram illustrates the different paths a user can take while navigating the blog. It helps to understand the user journey and ensure a seamless experience. You can view the user flow diagram at: [User Flow Diagram](https://your-user-flow-diagram-url.com)
+The user flow diagram illustrates the different paths a user can take while navigating the blog. It helps to understand the user journey and ensure a seamless experience. You can view the user flow diagram at:
+![ERD](static/images/Media/ERD.png)
 
 ## Testing and Validation
 Testing and validation are crucial to ensure the blog functions correctly and provides a great user experience. The following testing methods were used:
