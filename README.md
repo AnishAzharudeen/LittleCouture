@@ -74,7 +74,7 @@ The user flow diagram illustrates the different paths a user can take while navi
 ## Testing and Validation
 Testing and validation are crucial to ensure the blog functions correctly and provides a great user experience. The following testing methods were used:
 
-- Please see [TESTING.md](TESTING.md) file for all testing.
+- Please see [TESTING.md](Testing.md) file for all testing.
 
 
 ## Version Control & Secure Code Management
