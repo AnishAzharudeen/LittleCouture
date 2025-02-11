@@ -136,6 +136,13 @@ The database for the Little Couture Fashion Blog is designed to efficiently mana
 ![Submissions page](static/images/Media/unlike.jpg)
 
 
+### Future Enhancement:
+
+1. To Create Staff Login to approve the request.
+
+2.  Add more customisation
+
+
 
 ## Testing and Validation
 Testing and validation are crucial to ensure the blog functions correctly and provides a great user experience. The following testing methods were used:
