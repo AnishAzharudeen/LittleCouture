@@ -3,7 +3,9 @@
 - Manual testing was carried out throughout the development of the website and bugs fixed as they arose. 
 
 ## Manual testing
-- Manual testing was carried out on the local and deployed sites.
+
+
+
 | Feature         | TestcaseName                                                          | TestcaseSteps                                                         | TestcaseExpectation                                                                                       | Priority | Result |
 | --------------- | --------------------------------------------------------------------- | --------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------- | -------- | ------ |
 | Homepage        | Verify if the page is responsive                                      | Verify if the page is responsive                                      | Check the website in various device like mobile,desktop,ipad                                              | P0       | PASS   |
@@ -40,6 +42,11 @@
 | Submission Page | Test that Article is not Published without Approval                   | Test that Article is not Published without Approval                   | UnApproved Article is not Published                                                                       | P0       | PASS   |
 | About Page      | About Page Must be loaded Successfully                                | About Page Must be loaded Successfully                                | Function should work as expected                                                                          | P0       | PASS   |
 | About Page      | Users Should be able to send Collobarate Request from About Page      | Users Should be able to send Collobarate Request from About Page      | User Should be Able to submit Collobration Requestfor approval                                            | P0       | PASS   |
+
+
+
+
+
 
 
 ## Code validators
