@@ -43,6 +43,10 @@ def lifestyle(request):
     post_list = Article.objects.filter(category__name='LifeStyle')
     return render(request, 'fashion/lifestyle.html', {'post_list': post_list})
 
+def event(request):
+    post_list = Article.objects.filter(category__name='event')
+    return render(request, 'fashion/event.html', {'post_list': post_list})    
+
 def fashion(request):
     post_list = Article.objects.filter(category__name='Fashion')
     return render(request, 'fashion/fashion.html', {'post_list': post_list})

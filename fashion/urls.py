@@ -16,8 +16,7 @@ urlpatterns = [
     path('post/<slug:slug>/like/', views.like_article, name='like_article'),
     path('post/<slug:slug>/edit/', views.edit_article, name='edit_article'),
     path('post/<slug:slug>/delete/', views.delete_article, name='delete_article'),
-    path('event/', views.event_list, name='event_list'),  
-    path('event/<slug:slug>/', views.event_detail, name='event_detail'),
+    path('event/', views.event, name='event'),
     path('create_article/', views.create_article, name='create_article'),
 
 ]
