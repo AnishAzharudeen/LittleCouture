@@ -35,19 +35,31 @@
 ## Code validators
 ### HTML
 - The [W3C Validator](https://validator.w3.org/) was used to validate the HTML.
+
 #### Home
-- ![Home page validator screenshot](static/images/html-vali-home.png)
+- ![Home page validator screenshot](static/images/Media/Html-validator-Home.png)
 
-#### Logout page
-- ![Logout page validator screenshot](static/images/html-vali-home.png)
+#### Fashion page
+- ![Fahion page validator screenshot](static/images/Media/Html-validator-Fashion.png)
 
-#### Login page
-- ![Login page validator screenshot](static/images/html-vali-home.png)
+#### LifeStyle page
+- ![Lifestyle page validator screenshot](static/images/Media/Html-Validator-Lifestyle.png)
+
+#### About page
+- ![About page validator screenshot](static/images/Media/Html-validator-About.png)
+
+#### Events page
+- ![Events page validator screenshot](static/images/Media/Html-validator-Event.png)
 
 #### Register page
-- ![Register page validator screenshot](static/images/html-val-register.png)
-- When I checked the code that the validator was referring to, it was code which was integrated by Django for the review functionality and not written by me. I looked for it everywhere in an attempt to fix it but could not find it. 
-- ![Register page validator screenshot code](static/images/html-val-register-code.png)
+- ![Register page validator screenshot](static/images/Media/Html-validator-Register.png)
+
+#### Login Page
+- ![Login page validator screenshot](static/images/Media/Html-validator-Login.png)  
+
+#### Logout Page
+
+- ![Logout page validator screenshot code](static/images/html-validator-Logout.png)
 
 #### Example of Staff review (e.g. Bendigo Lounge)
 - ![Staff review validator screenshot](static/images/html-val-review.png)
