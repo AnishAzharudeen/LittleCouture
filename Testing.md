@@ -119,42 +119,17 @@
 - ![PEP8 screenshot](static/images/Media/wsipy-project.png)
 
 ### Lighthouse
-#### Home
-- ![Lighthouse screenshot for home page](static/images/lighthouse-home.png)
+#### Mobile
+- ![Lighthouse screenshot for home page](static/images/Media/Mobilepage.jpg)
 
-#### Register
-- ![Lighthouse screenshot for register page](static/images/lighthouse-register.png)
-
-#### Login
-- ![Lighthouse screenshot for login page](static/images/lighthouse-login.png)
-
-#### Logout
-- ![Lighthouse screenshot for logout page](static/images/lighthouse-logout.png)
-
-#### Edit reviews
-- ![Lighthouse screenshot for edit reviews page](static/images/lighthouse-edit-reviews.png)
+#### Desktop
+- ![Lighthouse screenshot for register page](static/images/Media/Desktop.jpg)
 
 
 #### Future improvements based on Lighthouse
 - The biggest performance issue was the detailed logo. This was already converted to WEBP so perhaps a less detailed image would be used if this site was to be carried forward.
 - Accessibility would be a priority moving forward. The colour palette was chosen based upon the central image and maintained throughout the site for design purposes. Moving forward, more high contrast colours would be chosen.
 
-
-## Responsiveness
-#### Mobile (iPhone 14 Pro)
-- ![mobile responsiveness screenshot- home](static/images/iphone-14-pro-home.png)
-- ![mobile responsiveness screenshot- register](static/images/iphone-14-pro-register.png)
-- ![mobile responsiveness screenshot- review](static/images/iphone-14-pro-review.png)
-
-#### Tablet (iPad Air 5)
-- ![tablet responsiveness screenshot- home](static/images/ipad-air-5-home.png)
-- ![tablet responsiveness screenshot- register](static/images/ipad-air-5-register.png)
-- ![tablet responsiveness screenshot- review](static/images/ipad-air-5-review.png)
-
-#### Desktop (Macbook Air)
-- ![laptop responsiveness screenshot- home](static/images/macbook-air-home.png)
-- ![laptop responsiveness screenshot- register](static/images/macbook-air-register.png)
-- ![laptop responsiveness screenshot- review](static/images/macbook-air-review.png)
 
 ## Browsers
 - I use Google Chrome as my browser so all screenshots above are from Google Chrome.
@@ -164,6 +139,5 @@
 - ![Opera screrenshot](static/images/opera.png)
 
 ## Bugs
-- When users want to Edit their user reviews, I wanted to pre-populate the Edit box with their original comment. I tried this in many different ways, using views and JavaScript, searching the internet for many different solutions but could not solve this issue. Instead, when the user clicks Edit, they are taken to a new tab so that they can still read their initial comment and copy it if they want. The Edit functionality still works and users are able to Edit their comments. Editing can also easily be achieved by the superuser in the admin panel. 
-- Initially there were going to be multiple reviews for one location and I based the slug off of the location name. I later realised that thiswould mean that there could be identical slugs which would cause major problems. I changed the concept so that there was one central staff review that the slug could be based on and then multiple reviews could be added to this central post. At first I thought to fix this by having a 'review tagline' which the slug would be based on but further developed this idea. 
-- When adding Summernote to the review function, initially the comment box was not showing up at all. After changing the Debug setting it then worked.
+Detailed View look is not completed
+
