@@ -65,11 +65,69 @@ The initial wireframes and mockups for the project were created using Balsamiq. 
 ![FashionPage](static/images/Media/Fashionpage-balsamic.png)
 ![LifestylePAge](static/images/Media/LifeStyle-balsamic.png)
 
+### Admin panel Database
 
+The database for Yummy Tummy is designed to efficiently manage and store user data, recipes, comments, and ratings. It uses PostgreSQL, a powerful, open-source relational database system, which ensures data integrity and supports complex queries.
 
-## User Flow Diagram
-The user flow diagram illustrates the different paths a user can take while navigating the blog. It helps to understand the user journey and ensure a seamless experience. You can view the user flow diagram at:
+![Admin panel](static/images/Media/Admin.png)
+
+## Database
+I used Code Institute's PostgreSQL database.
+
+## Database Planning
+The database for the Little Couture Fashion Blog is designed to efficiently manage and organize the various types of content and user interactions on the platform. The primary models include:
+
 ![ERD](static/images/Media/ERD.png)
+
+### User
+- **Fields**: `username`, `email`, `password`, `is_staff`, `is_active`
+- **Description**: Represents a user of the blog, including both regular users and staff members.
+
+### FashionItem
+- **Fields**: `title`, `description`, `image`, `category`, `author`, `status`, `created_at`
+- **Description**: Represents an article or post on the blog. Each post is associated with a category and an author.
+
+### Category
+- **Fields**: `name`, `slug`
+- **Description**: Represents a category for organizing posts. Each category has a unique name and slug.
+
+### Comment
+- **Fields**: `post`, `author`, `content`, `created_at`, `approved`
+- **Description**: Represents a comment made by a user on a post. Comments must be approved by a staff member before they are visible.
+
+### Like
+- **Fields**: `post`, `user`
+- **Description**: Represents a like made by a user on a post.
+
+### CollaborationRequest
+- **Fields**: `user`, `message`, `status`, `created_at`
+- **Description**: Represents a request made by a user to collaborate on the blog. Requests must be approved by a staff member.
+
+### Event
+- **Fields**: `title`, `description`, `date`, `location`, `created_at`
+- **Description**: Represents an event related to children's fashion. Events are displayed in the events section of the blog.
+
+### Data Relationships
+- A `User` can create multiple `FashionItem` posts.
+- A `FashionItem` post belongs to one `Category`.
+- A `FashionItem` post can have multiple `Comment`s.
+- A `Comment` is made by a `User` and belongs to a `FashionItem` post.
+- A `User` can submit multiple `CollaborationRequest`s.
+- A `User` can like multiple `FashionItem` posts.
+
+## Features of this Blog
+
+- **Home Page** 
+![Home page](static/images/Media/Home.png)
+
+- **Fashion Page**
+![Fashion Page](static/images/Media/Fashion.png)
+
+- **LifeStyle Page**
+![LifeStyle page](static/images/Media/LifeStyle.png)
+
+- **Submissions Page**
+![Submissions page](static/images/Media/Submissions.png)
 
 ## Testing and Validation
 Testing and validation are crucial to ensure the blog functions correctly and provides a great user experience. The following testing methods were used:
@@ -237,20 +295,17 @@ The use of AI drastically reduced development time, allowing for quicker debuggi
 - **CI LMS**: For code related to sign-in, sign-out, register. I have used CI walkthrough project 'I think therefore I blog' for the support during the process. I customised the models, views and templates to create my own unique website.
 - **Bootstrap**: HTML & CSS uses [Bootstrap Version 5.3](https://getbootstrap.com/docs/5.3/getting-started/introduction/)
 
-### Inspiration
-
-This project was inspired by Juniorstyle Blog team. Special thanks to the authors.
 
 ### Tools
 
 - **Visual Studio Code**: For code editing and development.
 - **Git and GitHub**: For version control and repository management.
 
- 
+### Inspiration
 
+This project was inspired by Juniorstyle Blog team. Special thanks to the authors.
 
-
-Code Institute: For providing the Full Stack Development Bootcamp course and resources that guided the development of this project.
+- **Code Institute**-: For providing the Full Stack Development Bootcamp course and resources that guided the development of this project.
 Mentors and Tutors: Special thanks to my faciliator Emmma Lamont and tutors - Spencer and Roo for their invaluable guidance and support throughout the project.
 Family and Friends: For their encouragement and feedback, which helped shape the final product.
 Open Source Community: For the various libraries and frameworks that made this project possible, including Django, Bootstrap, and PostgreSQL.
