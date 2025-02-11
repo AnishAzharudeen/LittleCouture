@@ -59,18 +59,13 @@
 
 #### Logout Page
 
-- ![Logout page validator screenshot code](static/images/html-validator-Logout.png)
+- ![Logout page validator screenshot code](static/images/Media/Html-validator-Logout.png)
 
-#### Example of Staff review (e.g. Bendigo Lounge)
-- ![Staff review validator screenshot](static/images/html-val-review.png)
-- The code which the validator is referring to is inputted from the admin section of the Django backend framework via summernote. It is not possible to add an 'alt' reference as a user. The </ p> is also code created by the framework.
 
-#### Edit review page
-- ![Edit review validator screenshot](static/images/html-vali-home.png)
 
 ### CSS custom code
 - The [W3C CSS Validator](https://jigsaw.w3.org/css-validator/) was used to validate the CSS.
-- ![CSS validator screenshot](static/images/css-vali.png)
+- ![CSS validator screenshot](static/images/Media/CSS-Validation.png)
 
 <p>
     <a href="http://jigsaw.w3.org/css-validator/check/referer">

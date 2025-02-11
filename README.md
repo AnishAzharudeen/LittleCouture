@@ -7,13 +7,14 @@ The goal of this project is to create a fashion blog for kids, where parents and
 The Little Couture Fashion Blog is a comprehensive platform designed to provide parents and fashion enthusiasts with the latest trends, styles, and inspirations in children's fashion. The blog features a variety of content, including articles, events, and other resources related to kids' fashion. The platform aims to create a community where users can share their experiences, insights, and ideas about children's fashion.
 
 ## Project Live Site
-You can visit the live site at: [Little Couture Fashion Blog](https://your-live-site-url.com)
+You can visit the live site at: [Little Couture Fashion Blog](https://little-couture-3d7dd4f24a83.herokuapp.com/lifestyle/)
 
 ## Project Board
-The project board is used to track the progress of the project, including tasks, issues, and milestones. You can view the project board at: [Little Couture Project Board](https://your-project-board-url.com)
+The project board is used to track the progress of the project, including tasks, issues, and milestones. You can view the project board at: [Little Couture Project Board](https://github.com/users/AnishAzharudeen/projects/13)
 
 ## Responsive
 The Little Couture Fashion Blog is designed to be fully responsive, ensuring a seamless user experience across all devices, including desktops, tablets, and smartphones. The responsive design ensures that the blog's layout, images, and content adjust gracefully to different screen sizes and orientations.
+![Responsiveimage](static/images/Media/amiresponsiveimage.png)
 
 ## Core Features
 
