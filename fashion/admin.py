@@ -1,4 +1,3 @@
-# filepath: /c:/Users/mhdaz/LittleCouture/LittleCouture/fashion/admin.py
 from django.contrib import admin
 from .models import Category, Article, Comment
 from django_summernote.admin import SummernoteModelAdmin
