@@ -26,6 +26,21 @@ The user design focuses on creating an intuitive and visually appealing interfac
 ## Balsamiq Design
 The initial wireframes and mockups for the project were created using Balsamiq. These designs helped to visualize the layout and structure of the blog before development began. You can view the Balsamiq designs at: [Balsamiq Designs](https://your-balsamiq-designs-url.com)
 
+## Deployment Procedures
+To deploy the Little Couture Fashion Blog, follow these steps:
+
+### Prerequisites
+- Ensure you have Python and pip installed on your machine.
+- Install Django and other dependencies listed in `requirements.txt`.
+- Set up a PostgreSQL database (or any other database you prefer).
+
+### Steps
+1. **Clone the Repository**:
+   ```bash
+   git clone https://github.com/your-username/little-couture-fashion-blog.git
+   cd little-couture-fashion-blog
+   ```
+
 ## User Flow Diagram
 The user flow diagram illustrates the different paths a user can take while navigating the blog. It helps to understand the user journey and ensure a seamless experience. You can view the user flow diagram at: [User Flow Diagram](https://your-user-flow-diagram-url.com)
 
@@ -44,4 +59,3 @@ This project was developed by [Your Name]. Special thanks to the following resou
 - [Heroku](https://www.heroku.com/)
 
 `python -m http.server`
-

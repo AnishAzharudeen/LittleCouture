@@ -55,10 +55,10 @@
                   <button type="submit" class="btn btn-primary"><ion-icon name="heart"></ion-icon>Like</button>
               {% endif %}
           {% else %}
-              <p><a href="{% url 'account_login' %}">Log in</a> to like this post.</p>
+              <p style="color: rgb(11, 34, 37);"><a href="{% url 'account_login' %}">Log in</a> to like this post.</p>
           {% endif %}
       </form>
-      <p>{{ post.total_likes }} likes</p>
+      <p style="color: rgb(11, 34, 37);">{{ post.total_likes }} likes</p>
   </div>
         <div class="col-12">
           <hr>
@@ -67,7 +67,7 @@
       <!-- Displaying Comments -->
       <div class="row">
         <div class="col-md-8 card mb-4  mt-3 ">
-          <h3>Comments:</h3>
+          <h3>Share your Thoughts</h3>
           <div class="card-body">
             <!-- We want a for loop inside the empty control tags
               to iterate through each comment in comments -->
@@ -112,7 +112,7 @@
               <button id="submitButton" type="submit" class="btn btn-primary">Submit</button>
             </form>
             {% else %}
-            <p>Log in to leave a comment</p>
+            <p style="color: rgb(11, 34, 37);"><a href="{% url 'account_login' %}">Log in</a> to leave a comment</p>
             {% endif %}
           </div>
         </div>
