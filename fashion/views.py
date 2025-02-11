@@ -8,6 +8,8 @@ from django.db.models import Count
 from django.urls import reverse
 from .models import Category, Article, Event, Comment
 from .forms import CommentForm,ArticleForm
+from django.contrib.auth import views as auth_views
+from django.urls import reverse_lazy
 
 
 
@@ -167,3 +169,5 @@ def create_article(request):
     else:
         form = ArticleForm()
     return render(request, 'fashion/create_article.html', {'form': form})
+
+
