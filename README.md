@@ -129,6 +129,14 @@ The database for the Little Couture Fashion Blog is designed to efficiently mana
 - **Submissions Page**
 ![Submissions page](static/images/Media/Submissions.png)
 
+- **Like Feature**
+![Submissions page](static/images/Media/Likebutton.jpg
+
+- **Unlike Feature**
+![Submissions page](static/images/Media/unlike.jpg)
+
+
+
 ## Testing and Validation
 Testing and validation are crucial to ensure the blog functions correctly and provides a great user experience. The following testing methods were used:
 
