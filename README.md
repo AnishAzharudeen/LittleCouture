@@ -72,9 +72,9 @@ The user flow diagram illustrates the different paths a user can take while navi
 
 ## Testing and Validation
 Testing and validation are crucial to ensure the blog functions correctly and provides a great user experience. The following testing methods were used:
-- **Unit Testing**: Individual components and functions were tested to ensure they work as expected.
-- **Integration Testing**: Different parts of the application were tested together to ensure they work seamlessly.
-- **User Testing**: Real users tested the blog to provide feedback on usability and functionality.
+
+- Please see [TESTING.md](TESTING.md) file for all testing.
+
 
 ## Version Control & Secure Code Management
 
@@ -103,47 +103,35 @@ This project utilizes Git for version control and is hosted on GitHub. The repos
 
 The application is deployed on Heroku and is accessible at:
 
-[My Recipes Book](https://my-recipes-book-5149219e370b.herokuapp.com/)
+![LittleCouture](https://little-couture-3d7dd4f24a83.herokuapp.com/)
 
 ### 🛠 Deployment Process
 
-The deployment was carried out using Heroku with the following steps:
+1. Click 'New' > 'Create new app'
+2. Choose a unique name, choose your region and press 'Create app'
+3. Click on 'Settings' and then 'Reveal Config Vars'
+4. Add a key of 'DISABLE_COLLECTSTATIC' with a value of '1'.
+5. Add a key of 'DATABASE_URL' - the value will be the URL you were emailed when creating your database.
+6. Add a key of 'SECRET_KEY' - the value will be any random secret key (google 'secret key generator' and use it to generate a random string of numbers, letters and characters)
+7. In your terminal, type the code you will need to install project requirements:
+    - pip3 install gunicorn~=20.1
+    - pip3 install -r requirements.txt
+    - pip3 freeze --local > requirements.txt
+8. Create an 'env.py' file at the root directory which contains the following:
+    - import os
+    - os.environ["DATABASE_URL"]='CI database URL'
+    - os.environ["SECRET_KEY"]=" Your secret key"
+9. Create a file at the root directory called Procfile. In this file enter: "web: gunicorn my_project.wsgi" (without the quotes)
+10. In settings.py, set DEBUG to False. 
+    - YOU SHOULD ALWAYS SET DEBUG TO FALSE BEFORE DEPLOYING FOR SECURITY
+11. Add ",'.herokuapp.com' " (without the double quotes) to the ALLOWED_HOSTS list in settings.py
+12. Add, commit and push your code.
+13. Go back to Heroku, click on the 'Deploy' tab.
+14. Connect your project to GitHub.
+15. Scroll to the bottom and click 'Deploy Branch' and your project will be deployed!
 
-1 - Prepare the application
 
- - Install dependencies: `pip install -r requirements.txt`
-
- - Set `DEBUG = False` for production.
-
- - Configure `ALLOWED_HOSTS` to include the Heroku app domain.
-
-2 - Set up environment variables
-
-The following variables were added to Heroku:
-
-- CLOUDINARY_URL – For media storage
-
-- DATABASE_URL – For database connection
-
-- DISABLE_COLLECTSTATIC=1 – To prevent static file collection issues
-
-- SECRET_KEY – To ensure application security
-
-3 - Deploy to Heroku
-
-- Create a new Heroku app: heroku create my-recipes-book
-
-- Set environment variables: heroku config:set VAR_NAME=value
-
-- Push the project:
-
-```bash
-git add .
-git commit -m "Prepare for deployment"
-git push heroku main
-```
-
-- Run database migrations: `heroku run python manage.py migrate`
+*************Used  CLOUDINARY_URL – For media storage **********
 
 
 ## 🔒 Security Measures
@@ -164,6 +152,8 @@ After deployment, the application was tested to ensure:
 - Database connections and media storage work correctly.
 
 - The UI and interactive features operate as expected.
+
+
 
 
 ## AI Assistance in Development 🤖
@@ -228,12 +218,40 @@ The use of AI drastically reduced development time, allowing for quicker debuggi
 
 **Whitenoise**: Library for serving static files in Django applications.
 
-## Credit
-This project was developed by [Your Name]. Special thanks to the following resources and tools that made this project possible:
-- [Django](https://www.djangoproject.com/)
-- [Bootstrap](https://getbootstrap.com/)
-- [Font Awesome](https://fontawesome.com/)
-- [Balsamiq](https://balsamiq.com/)
-- [Heroku](https://www.heroku.com/)
+## Credit and Acknowledgements
 
-`python -m http.server`
+### Resources
+ 
+- **Coolors**: For generating the color palette used in the application.
+- **Am I Responsive**: For testing the responsiveness of the application across different devices.
+- **Google Fonts**: For providing the fonts used in the application.
+- **Logo Design**: Created using Canva to reflect the essence of the application.
+- **pgAdmin**: For creating the Entity Relationship Diagram (ERD) used in database planning.
+- **Balsamiq**: For wireframe creation.
+- **Django**: For Developing Python Framework.
+- **Heroku**: For hosting the application.
+- **PostgreSQL**: For database management.
+- **Copilot & Chatgpt**: For providing high-quality images used in the application
+- **Font Awesome**: For icons used throughout the site.
+- **CI LMS**: For code related to sign-in, sign-out, register. I have used CI walkthrough project 'I think therefore I blog' for the support during the process. I customised the models, views and templates to create my own unique website.
+- **Bootstrap**: HTML & CSS uses [Bootstrap Version 5.3](https://getbootstrap.com/docs/5.3/getting-started/introduction/)
+
+### Inspiration
+
+This project was inspired by Juniorstyle Blog team. Special thanks to the authors.
+
+### Tools
+
+- **Visual Studio Code**: For code editing and development.
+- **Git and GitHub**: For version control and repository management.
+
+ 
+
+
+
+Code Institute: For providing the Full Stack Development Bootcamp course and resources that guided the development of this project.
+Mentors and Tutors: Special thanks to my faciliator Emmma Lamont and tutors - Spencer and Roo for their invaluable guidance and support throughout the project.
+Family and Friends: For their encouragement and feedback, which helped shape the final product.
+Open Source Community: For the various libraries and frameworks that made this project possible, including Django, Bootstrap, and PostgreSQL.
+GitHub Copilot: For assisting in code suggestions, debugging, and documentation, significantly enhancing productivity and code quality.
+To everyone who tested the application and provided constructive feedback, helping to improve the overall user experience and functionality.
