@@ -1,4 +1,3 @@
-# filepath: /c:/Users/mhdaz/LittleCouture/LittleCouture/fashion/apps.py
 from django.apps import AppConfig
 
 class FashionConfig(AppConfig):

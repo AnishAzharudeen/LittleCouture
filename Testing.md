@@ -74,28 +74,25 @@
         alt="Valid CSS!" />
     </a>
 </p>
-
 ### Python
+
 - The [CI Python Linter](https://pep8ci.herokuapp.com/) was used to validate the Python files.
 - admin.py
-- ![PEP8 screenshot](static/images/pep8-admin.png)
+- ![PEP8 screenshot](static/images/Media/Adminpy-fashion.png)
 - apps.py
-- ![PEP8 screenshot](static/images/pep8-apps.png)
+- ![PEP8 screenshot](static/images/Media/Apppy-Fashion.png)
 - forms.py
-- ![PEP8 screenshot](static/images/pep8-forms.png)
+- ![PEP8 screenshot](static/images/Media/Formpy-fashion.png)
 - models.py
-- ![PEP8 screenshot](static/images/pep8-models.png)
-- settings.py
-- ![PEP8 screenshot](static/images/pep8-settings.png)
-- ey-up/urls.py
-- ![PEP8 screenshot](static/images/pep8-urls-ey-up.png)
-- pup_review/urls.py
-- ![PEP8 screenshot](static/images/pep8-urls.png)
+- ![PEP8 screenshot](static/images/Media/Modelpy-fahion.png)
+- fashion/urls.py
+- ![PEP8 screenshot](static/images/Media/Urlpy-fashion.png)
+- About/models.py
+- ![PEP8 screenshot](static/images/Media/Modelpy-About.png)
 - views.py
-- ![PEP8 screenshot](static/images/pep8-views.png)
-- Even though one line was considered too long by PEP8 (highlighted), I decided that the readability of the code was better when left on the same line, since it was very close to the accepted limit. Even though error exists, the app still functions. 
+- ![PEP8 screenshot](static/images/Media/Viewspy-fashion.png)
 - wsgi.py
-- ![PEP8 screenshot](static/images/pep8-wsgi.png)
+- ![PEP8 screenshot](static/images/Media/wsipy-project.png)
 
 ### Lighthouse
 #### Home
