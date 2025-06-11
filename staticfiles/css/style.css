@@ -1,0 +1,375 @@
+/* filepath: /c:/Users/mhdaz/LittleCouture/LittleCouture/static/css/styles.css */
+
+/* General Styles */
+
+header {
+    
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    background-color: #333;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional shadow */
+}
+
+body {
+    font-family: 'Lato', sans-serif;
+    background-color: #0e7477;
+    color: #859b9e;
+    margin: 0;
+    padding: 0;
+    background-image: url("{% static 'images/background.jpg' %}");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Playfair Display', serif;
+    color: #333;
+}
+
+a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #0056b3;
+    text-decoration: underline;
+}
+
+/* Navbar Styles */
+.navbar {
+    background-color: #fff;
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.navbar-brand {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    color: #333;
+}
+
+.navbar-nav .nav-link {
+    color:  #265763;
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+}
+
+.navbar-nav .nav-link:hover {
+    color: #007bff;
+}
+
+/* Card Styles */
+.card {
+
+    border-radius: 8px;
+    box-shadow: var(--smal-box-shadow);
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+
+.card-img-top {
+    width: 100%;
+    border-bottom: 4px solid #2C0703;
+    object-fit: cover;
+    aspect-ratio: 1/1;
+}
+
+.card-body {
+    padding: 1.5rem;
+}
+
+.card-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.25rem;
+    margin-bottom: 0.75rem;
+}
+
+.card-text {
+    font-family: "Fleur De Leah", serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 1.1rem; /* Set the font size */
+    color: #104444; /* Set the text color */
+    line-height: 1.6; /* Set the line height for better readability */
+    margin-bottom: 1rem; /* Add some space at the bottom */
+    text-align: justify; /* Justify the text for a clean look */
+}
+
+
+.btn-primary {
+    background-color: #007bff;
+    border-color: #007bff;
+    color: #fff;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+    border-color: #0056b3;
+}
+
+/* Footer Styles */
+footer {
+    
+    padding: 10px 0;
+    bottom: 0;
+    width: 100%;
+    z-index: 1000;
+    background-color: #0c0505; /* Adjust as needed */
+    box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1); /* Optional shadow */
+}
+
+.footer a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.footer a:hover {
+    color: #007bff;
+}
+
+.logo {
+    height: 80px;
+    margin-right: 80px;
+}
+
+/* Hero Image Styles */
+.hero-image {
+    height: 60vh; /* Full viewport height */
+    width: 90%; /* Full width */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    padding-left: 20px; /* Add left padding */
+    padding-right: 20px; /* Add right padding */
+    margin: 0 auto; /* Center the carousel */
+}
+
+
+.hero-image-1 {
+    background-image: url('../images/hero1.jpg');
+    
+}
+
+.hero-image-2 {
+    background-image: url('../images/hero2.jpg');
+    
+}
+
+.hero-image-3 {
+    background-image: url('../images/hero-image-3.jpg');
+    
+}
+.hero-text {
+    color: rgb(150, 216, 221);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    padding: 0 20px; /* Add padding for smaller screens */
+}
+
+.hero-text h1 {
+    font-size: 2rem; /* Adjust font size for responsiveness */
+    
+}
+
+
+.hero-text .btn {
+    margin-bottom: 10px; /* Add margin for spacing on smaller screens */
+    background-color: #e265a4cb;
+    color: #333635;
+    font-weight: bold;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 8px;
+
+}
+
+
+/* Forms Design*/
+
+
+.register-form {
+    width: 100%;
+    max-width: 800px; /* Set a maximum width for the form container */
+    margin: 3% auto;
+    padding: 20px;
+    box-shadow: var(--smal-box-shadow);
+    border-radius: 8px;
+    border: 1px solid #ccc; /* Add a border around the form container */
+    background-color: #F5F2F2; /* Set a background color for the form container */
+}
+
+.form-container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #2e061f;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.form-container input[type="text"],
+.form-container input[type="file"],
+.form-container textarea,
+.form-container select {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #1b1919;
+    border-radius: 4px;
+}
+
+.form-container button[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    background-color: #19768d;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.form-container button[type="submit"]:hover {
+    background-color: #94b3d3;
+}
+
+/*** button styles ***/
+
+/* Edit button */
+.btn-edit {
+    background-color: #19768d;
+    font-weight: bold;
+    border: none;
+    padding: 10px 20px;
+    margin: 10px 0;
+    cursor: pointer;
+    border-radius: 8px;
+}
+
+/* Delete button */
+.btn-delete {
+    background-color: #e04199;
+    color: #000;
+    font-weight: bold;
+    border: none;
+    padding: 10px 20px;
+    margin: 10px 0;
+    cursor: pointer;
+    border-radius: 8px;
+}
+
+
+.btn-signup {
+    background-color: #19768d;
+    color: #000;
+    font-weight: bold;
+    border: none;
+    padding: 10px 20px;
+    margin: 10px 0;
+    cursor: pointer;
+    border-radius: 8px;
+    
+}
+
+/* Signout button */
+.btn-signout {
+    background-color: #19768d;
+    color: #000;
+    font-weight: bold;
+    border: none;
+    padding: 10px 20px;
+    margin: 10px 0;
+    cursor: pointer;
+    border-radius: 8px;
+}
+
+
+.btn-primary {
+    background-color: #19768d;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #dde1e6;
+}
+
+.btn-danger{
+    background-color: #e04199;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.btn-danger:hover {
+    background-color: #dde1e6;
+}
+
+.masthead-image img
+{ width: 100%;
+height: auto;
+object-fit: cover;
+border-radius: 15px;
+ }
+ .masthead-text {
+ padding: 20px;
+display: flex;
+flex-direction: column;
+justify-content: center;
+}
+
+
+
+
+.post-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.post-subtitle {
+    font-family: 'Lato', sans-serif;
+    font-size: 1rem;
+    color: #333;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.masthead-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.card-text {
+    font-family: 'Lato', sans-serif;
+    font-size: 1.1rem;
+    color: #444;
+    line-height: 1.6;
+}
+
+
+
+#navbarText {
+    font-family: "Fleur De Leah", serif; /* Change to your desired font family */
+    font-size: 2rem; /* Adjust the font size as needed */
+    color: #0cb38e; /* Change to your desired text color */
+    font-weight: 400;; /* Adjust the font weight as needed */
+}
