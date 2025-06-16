@@ -25,18 +25,29 @@ def category_list(request):
 def article_list(request, category_id):
     articles = Article.objects.filter(category_id=category_id)
     return render(request, 'fashion/fashion.html', {'articles': articles})
+def get_queryset(self):
+        # Only fetch articles with status = 1 (Published)
+        return Article.objects.filter(status=1).order_by('-created_on') 
 
 class PostListView(ListView):
     model = Article
     template_name = 'fashion/post_list.html'
     context_object_name = 'post_list'
     ordering = ['-created_on']
+ 
 
 class PostListView1(ListView):
     model = Article
     template_name = 'fashion/index.html'
     context_object_name = 'post_list'
     ordering = ['-created_on']
+    def get_queryset(self):
+        # Only fetch articles with status = 1 (Published)
+        return Article.objects.filter(status=1).order_by('-created_on') 
+    
+   
+    
+    
 
 
 def lifestyle(request):
@@ -169,7 +180,8 @@ def create_article(request):
             article.author = request.user
             article.status = 0
             article.save()
-            return redirect('post_list')
+            messages.success(request, "Article submitted as draft successfully!")
+            return redirect('home')
     else:
         form = ArticleForm()
     return render(request, 'fashion/create_article.html', {'form': form})
